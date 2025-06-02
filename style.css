@@ -2,6 +2,9 @@
 COLORs 
 **/
 
+.colorBackground_Gray{
+    background-color: hsl(0,0%,50%);
+}
 
 /** 
 GENERAL
@@ -11,6 +14,9 @@ h1{
 }
 .textareaAll{
     resize: none;
+}
+
+.divInput{
 }
 
 
@@ -26,6 +32,15 @@ MOBILE
 **/
 
 @media all and (orientation: portrait){
+/**
+PADDING
+**/
+    .padding10{
+        padding: 1rem;
+    }
+/**
+GENERAL
+**/
     body{
         display: flex;
         flex-direction: column;
@@ -34,5 +49,9 @@ MOBILE
     .textareaAll{
         height: 10rem;
         width: 14rem;
+    }
+    .buttonCompare{
+        height: 2rem;
+        width: 14.5rem;
     }
 }

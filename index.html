@@ -7,24 +7,39 @@
         <title>Character Comparison</title>
     </head>
     <body>
-        
-        <h1>
-            CHARACTER COMPARISON
-        </h1>
         <div>
+            <h1>
+                CHARACTER COMPARISON
+            </h1>
+        </div>
+        <div class = 'divInput colorBackground_Gray padding50'>
             <form>
                 <section class = 'sectionFirst'>
-                    <textarea class = 'textareaFirst textareaAll'>
-                    </textarea>
+                    <textarea class = 'textareaFirst textareaAll'></textarea>
                 </section>
                 <section class = 'sectionSecond'>
-                    <textarea class = 'textareaSecond textareaAll'>
-                    </textarea>
+                    <textarea class = 'textareaSecond textareaAll'></textarea>
                 </section>
                 <section class = 'sectionConfirm'>
-                    <input type="submit" value ="COMPARE">
+                    <input class = 'buttonCompare' type="submit" value ="COMPARE">
                 </section>
             </form>
+        </div>
+        <div class = 'divOutput colorBackground_Gray padding50'>
+            <section class = 'sectionFirstOutput'>
+                <section class = 'sectionOutputFirst'>
+                </section>
+                <section class = 'sectionCounterFirst'>
+                    <p>Character length:<span></span></p>
+                </section>
+            </section>
+            <section class = 'sectionSecondOutput'>
+                <section class = 'sectionOutputSecond'>
+                </section>
+                <section class = 'sectionCounterSecond'>
+                    <p>Character length:<span></span></p>
+                </section>
+            </section>
         </div>
         <script type="module" src = 'script/script.js'></script>
     </body>
