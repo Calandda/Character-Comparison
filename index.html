@@ -7,7 +7,7 @@
         <title>Character Comparison</title>
     </head>
     <body>
-        <div>
+        <div class = 'colorBackground_Gray'>
             <h1>
                 CHARACTER COMPARISON
             </h1>
@@ -15,10 +15,10 @@
         <div class = 'divInput colorBackground_Gray padding50'>
             <form>
                 <section class = 'sectionFirst'>
-                    <textarea class = 'textareaFirst textareaAll'></textarea>
+                    <textarea class = 'textareaFirst textareaAll' id = 'originalText' name = 'originalText' placeholder = 'ORIGINAL TEXT'></textarea>
                 </section>
                 <section class = 'sectionSecond'>
-                    <textarea class = 'textareaSecond textareaAll'></textarea>
+                    <textarea class = 'textareaSecond textareaAll' id = 'comparisonText' name = 'originalText' placeholder = 'TEXT TO COMPARE'></textarea>
                 </section>
                 <section class = 'sectionConfirm'>
                     <input class = 'buttonCompare' type="submit" value ="COMPARE">
@@ -39,6 +39,8 @@
                 <section class = 'sectionCounterSecond'>
                     <p>Character length:<span></span></p>
                 </section>
+            </section>
+            <section class = 'sectionOverall'>
             </section>
         </div>
         <script type="module" src = 'script/script.js'></script>
