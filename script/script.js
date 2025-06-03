@@ -2,6 +2,8 @@ class main{
     constructor(){
         let formCompare = document.querySelector('.formCompare');
         let buttonCompare = document.querySelector('.buttonCompare');
+        let divOutput = document.querySelector('.divOutput');
+        formCompare.reset();
         let formData = {};
         let inputData = [];
         let outputData = [];
@@ -9,6 +11,7 @@ class main{
             formData = new FormData(formCompare);
             inputData = Array.from(formData);
             outputData = this.compareData(inputData);
+            this.outputChange_Main(inputData,outputData,divOutput);
         });
     }
     compareData(inputData){
@@ -35,7 +38,33 @@ class main{
         }
         return(output);
     }
-    
+    outputChange_Main(inputData,outputData,divOutput){
+        let pCompare = document.querySelector('.pCompare');
+        console.log(inputData);
+        console.log(outputData);
+        console.log(divOutput);
+        this.outputChange_Single(inputData,outputData,pCompare);
+    }
+    outputChange_Single(inputData,outputDataSingle,pElement){
+        console.log(inputData);
+        console.log(outputDataSingle);
+        console.log(pElement);
+        let tempSpan = [];
+        for(let i = 0; i < outputDataSingle.length;i++){
+            tempSpan = document.createElement('span');
+            if(inputData[0][1].length > i){
+                tempSpan.textContent = inputData[0][1][i];
+                if(outputDataSingle[i] == false){
+                    tempSpan.classList.add('colorBackground_Red', 'textWidth50');
+                }
+                pElement.appendChild(tempSpan);
+            }
+        }
+    }
+    outputChange_SingleCharacter(singleCharacter,pElement){
+    }
+    clearOutputDiv(){
+    }
 }
 
 let mainObject = new main();

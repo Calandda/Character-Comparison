@@ -3,7 +3,23 @@ COLORs
 **/
 
 .colorBackground_Gray{
-    background-color: hsl(0,0%,50%);
+    background-color: hsl(0,0%,80%);
+}
+.colorBackground_White{
+    background-color: hsl(0,100%,100%);
+}
+.colorBackground_Red{
+    background-color: hsl(0, 100%, 50%);
+}
+/**
+PADDING
+MARGIN
+**/
+.padding0{
+    padding:0;
+}
+.margin0{
+    margin: 0;
 }
 
 /** 
@@ -35,9 +51,22 @@ MOBILE
 /**
 PADDING
 **/
-    .padding10{
-        padding: 1rem;
+    .padding50{
+        padding: 0.5rem;
     }
+/**
+BORDER CIRCLE
+**/
+    .borderCircle100{
+        border-radius: 0.4rem;
+    }
+/**
+TEXT 
+**/
+    .textWidth50{
+        width: 1.4rem;
+    }
+
 /**
 GENERAL
 **/
@@ -45,13 +74,46 @@ GENERAL
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
     }
-    .textareaAll{
-        height: 10rem;
-        width: 14rem;
+    h1{
+        padding: 0;
     }
-    .buttonCompare{
-        height: 2rem;
-        width: 14.5rem;
+    .divInput{
+        display: flex;
+        justify-content: center;       
+        width: clamp(15rem, 80%, 30rem);
     }
+        .formCompare{
+            width: 90%;
+        }
+        .sectionFirst{
+            width: 100%;
+        }
+        .sectionSecond{
+            width: 100%;
+        }
+        .textareaAll{
+            height: 10rem;
+            width: 100%;
+        }
+        .sectionConfirm{
+            width: 100%;
+        }
+        .buttonCompare{
+            height: 2rem;
+            width: 102%;
+        }
+    .divOutput{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: clamp(15rem, 80%, 30rem);
+    }
+        h3{
+            
+        }
 }
