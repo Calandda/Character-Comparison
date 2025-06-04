@@ -21,10 +21,19 @@ MARGIN
 .margin0{
     margin: 0;
 }
-
+/**
+OTHERS
+**/
+.displayNone{
+    display: none;
+}
+.displayFlex{
+    display: flex;
+}
 /** 
 GENERAL
 **/
+
 h1{
     text-align: center;
 }
@@ -64,7 +73,7 @@ BORDER CIRCLE
 TEXT 
 **/
     .textWidth50{
-        width: 1.4rem;
+        width: 1.1rem;
     }
 
 /**
@@ -107,7 +116,7 @@ GENERAL
             width: 102%;
         }
     .divOutput{
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -115,5 +124,10 @@ GENERAL
     }
         h3{
             
+        }
+        .pCompare > span, 
+        .pOriginal > span{
+            display: inline-block;
+            text-align: center;
         }
 }

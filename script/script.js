@@ -2,6 +2,7 @@ class main{
     constructor(){
         let formCompare = document.querySelector('.formCompare');
         let buttonCompare = document.querySelector('.buttonCompare');
+        let divInput = document.querySelector('.divInput');
         let divOutput = document.querySelector('.divOutput');
         formCompare.reset();
         let formData = {};
@@ -12,6 +13,7 @@ class main{
             inputData = Array.from(formData);
             outputData = this.compareData(inputData);
             this.outputChange_Main(inputData,outputData,divOutput);
+            this.changeDisplay(divInput,divOutput);
         });
     }
     compareData(inputData){
@@ -40,31 +42,37 @@ class main{
     }
     outputChange_Main(inputData,outputData,divOutput){
         let pCompare = document.querySelector('.pCompare');
-        console.log(inputData);
-        console.log(outputData);
-        console.log(divOutput);
         this.outputChange_Single(inputData,outputData,pCompare);
     }
     outputChange_Single(inputData,outputDataSingle,pElement){
-        console.log(inputData);
-        console.log(outputDataSingle);
-        console.log(pElement);
         let tempSpan = [];
         for(let i = 0; i < outputDataSingle.length;i++){
             tempSpan = document.createElement('span');
             if(inputData[0][1].length > i){
                 tempSpan.textContent = inputData[0][1][i];
                 if(outputDataSingle[i] == false){
-                    tempSpan.classList.add('colorBackground_Red', 'textWidth50');
+                    tempSpan.classList.add('colorBackground_Red');
                 }
+                tempSpan.classList.add('textWidth50');
                 pElement.appendChild(tempSpan);
             }
         }
     }
     outputChange_SingleCharacter(singleCharacter,pElement){
     }
+    changeDisplay(inputDisplay,outputDisplay){
+        console.log(inputDisplay.style.display);
+        console.log(outputDisplay.style.display);
+        if(outputDisplay.style.display === 'none' || outputDisplay.style.display === ""){
+            outputDisplay.style.display = 'flex';
+            inputDisplay.style.display = 'none';
+        }
+    }
     clearOutputDiv(){
     }
+    clearOutputDiv_pElement(tagElement){
+    }
+    
 }
 
 let mainObject = new main();
