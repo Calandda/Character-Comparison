@@ -73,7 +73,7 @@ BORDER CIRCLE
 TEXT 
 **/
     .textWidth50{
-        width: 1.1rem;
+        width: 1.4rem;
     }
 
 /**
@@ -125,8 +125,19 @@ GENERAL
         h3{
             
         }
+        .sectionOutput{
+            overflow: scroll;
+            width: 100%;
+        }
+        .sectionOutput > p{
+            height: 1rem;
+            width: max-content;
+            display: inline-block;
+            width: 100%;
+        }
         .pCompare > span, 
-        .pOriginal > span{
+        .pOriginal > span,
+        .pArrow > span{
             display: inline-block;
             text-align: center;
         }

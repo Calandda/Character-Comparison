@@ -50,21 +50,47 @@ class main{
         return(output);
     }
     outputChange_Main(inputData,outputData,divOutput){
+        let pOriginal = document.querySelector('.pOriginal');
+        let pArrow = document.querySelector('.pArrow');
         let pCompare = document.querySelector('.pCompare');
-        this.outputChange_Single(inputData,outputData,pCompare);
+        this.outputChange_Single(inputData,outputData,pOriginal, 'original');
+        this.outputChange_Arrow(outputData,inputData[0][1].length, pArrow);    
+        this.outputChange_Single(inputData,outputData,pCompare, 'compare');    
     }
-    outputChange_Single(inputData,outputDataSingle,pElement){
+    outputChange_Single(inputData,outputDataSingle,pElement,type){
         let tempSpan = [];
+        let tempIndex = 0;
+        if(type == 'original'){
+            tempIndex = 0;
+        } else if(type == 'compare') {
+            tempIndex = 1;
+        }
         for(let i = 0; i < outputDataSingle.length;i++){
             tempSpan = document.createElement('span');
             if(inputData[0][1].length > i){
-                tempSpan.textContent = inputData[0][1][i];
+                tempSpan.textContent = inputData[tempIndex][1][i];
                 if(outputDataSingle[i] == false){
                     tempSpan.classList.add('colorBackground_Red');
                 }
                 tempSpan.classList.add('textWidth50');
                 pElement.appendChild(tempSpan);
             }
+        }
+    }
+    outputChange_Arrow(outputDataSingle,outputLength,pElement){
+        let imageSync = ["url('../assets/images/Sync.png')","url('../assets/images/Sync_Problem.png')"];
+        let tempSpan = '';
+        for(let i = 0; i < outputLength;i++){
+            tempSpan = document.createElement('span');
+            if(outputDataSingle[i] == true){
+                tempSpan.textContent = '.';
+                tempSpan.style.backgroundImage = imageSync[0];
+            } else if(outputDataSingle[i] == false){
+                tempSpan.textContent = '.';
+                tempSpan.style.backgroundImage = imageSync[1];
+            }
+            tempSpan.classList.add('textWidth50');
+            pElement.appendChild(tempSpan);
         }
     }
     outputChange_SingleCharacter(singleCharacter,pElement){
