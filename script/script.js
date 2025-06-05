@@ -4,6 +4,9 @@ class main{
         let buttonCompare = document.querySelector('.buttonCompare');
         let divInput = document.querySelector('.divInput');
         let divOutput = document.querySelector('.divOutput');
+        let templateOutput = document.querySelector('.templateOutput');
+        let buttonReset = '';
+        
         formCompare.reset();
         let formData = {};
         let inputData = [];
@@ -12,8 +15,14 @@ class main{
             formData = new FormData(formCompare);
             inputData = Array.from(formData);
             outputData = this.compareData(inputData);
+            this.changeDisplay(divInput,divOutput,templateOutput);
             this.outputChange_Main(inputData,outputData,divOutput);
-            this.changeDisplay(divInput,divOutput);
+            formCompare.reset();
+            buttonReset = document.querySelector('.buttonReset');
+            buttonReset.addEventListener('click',()=>{
+                this.changeDisplay(divInput,divOutput);
+                this.clearOutputDiv(divOutput);
+            });
         });
     }
     compareData(inputData){
@@ -60,19 +69,22 @@ class main{
     }
     outputChange_SingleCharacter(singleCharacter,pElement){
     }
-    changeDisplay(inputDisplay,outputDisplay){
-        console.log(inputDisplay.style.display);
-        console.log(outputDisplay.style.display);
+    changeDisplay(inputDisplay,outputDisplay,templateOutput){
         if(outputDisplay.style.display === 'none' || outputDisplay.style.display === ""){
+            let templateClone = templateOutput.content.cloneNode(true);
+            outputDisplay.appendChild(templateClone);
             outputDisplay.style.display = 'flex';
             inputDisplay.style.display = 'none';
+        } else {
+            outputDisplay.style.display = 'none';
+            inputDisplay.style.display = 'flex';
         }
     }
-    clearOutputDiv(){
-    }
-    clearOutputDiv_pElement(tagElement){
-    }
-    
+    clearOutputDiv(divOutput){
+        while(divOutput.firstChild){
+            divOutput.removeChild(divOutput.lastChild);
+        }
+    }    
 }
 
 let mainObject = new main();
